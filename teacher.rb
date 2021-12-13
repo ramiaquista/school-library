@@ -1,3 +1,4 @@
+require './person'
 # Class Teacher file.
 class Teacher < Person
   def constructor(specialization)

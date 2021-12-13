@@ -1,3 +1,4 @@
+require './person'
 # Class Student file.
 class Student < Person
   def constructor(clasroom)
