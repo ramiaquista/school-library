@@ -1,6 +1,6 @@
 # Class Person file.
 class Person
-  def initialize(age, name = 'Unknown', parent_permission: true)
+  def initialize(age, name = 'Unknown', parent_permission = true)
     @name = name
     @age = age
     @parent_permission = parent_permission
@@ -10,13 +10,17 @@ class Person
   attr_accessor :name, :age
 
   def can_use_services?
-    true if of_age? || @parent_permission
+    if of_age? || @parent_permission
+      true
+    else
+      false
+    end
   end
 
   private
 
   # Naming/PredicateName: Rename is_of_age? to of_age? Rubocop error, that's why I have changed the name
   def of_age?
-    true if @age >= 18
+    @age >= 18
   end
 end
