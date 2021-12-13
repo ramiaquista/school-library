@@ -1,5 +1,3 @@
-# frozen_string_literal: false
-
 # Class Teacher file.
 class Teacher < Person
   def constructor(specialization)
