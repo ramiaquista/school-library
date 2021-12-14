@@ -1,9 +1,11 @@
+require './corrector'
 # Class Person file.
 class Person
   def initialize(age, name = 'Unknown', parent_permission: true)
     @name = name
     @age = age
     @parent_permission = parent_permission
+    @corrector = Corrector.new
   end
 
   attr_reader :id
@@ -15,6 +17,10 @@ class Person
     else
       false
     end
+  end
+
+  def validate_name
+    @name = @corrector.correct_name(@name)
   end
 
   private
