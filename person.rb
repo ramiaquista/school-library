@@ -1,11 +1,11 @@
 require './corrector'
+require 'pry'
 # Class Person file.
 class Person
   def initialize(age, name = 'Unknown', parent_permission: true)
     @name = name
     @age = age
     @parent_permission = parent_permission
-    @corrector = Corrector.new
   end
 
   attr_reader :id
