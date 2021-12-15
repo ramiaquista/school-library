@@ -6,6 +6,7 @@ class Person
     @age = age
     @parent_permission = parent_permission
     @corrector = Corrector.new
+    @rentals = []
   end
 
   attr_reader :id
@@ -21,6 +22,10 @@ class Person
 
   def validate_name
     @name = @corrector.correct_name(@name)
+  end
+
+  def add_rental(rental)
+    @rental.push(rental)
   end
 
   private
