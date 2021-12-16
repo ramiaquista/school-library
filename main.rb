@@ -50,8 +50,10 @@ def create_a_book
   @books.push(book)
 end
 
-def create_a_rental # rubocop:disable Metrics/AbcSize
-  if !@books.empty?
+def create_a_rental
+  if @books.empty?
+    puts 'No books available'
+  else
     puts 'Select a book from the following list by number'
     @books.each_with_index do |book, index|
       puts "#{index}) Title: '#{book.title}', Author: #{book.author}"
@@ -68,8 +70,6 @@ def create_a_rental # rubocop:disable Metrics/AbcSize
     person = @people[person_is_renting.to_i]
     Rental.new(date_of_rent, book, person)
     puts 'Rental created successfully'
-  else
-    puts 'No books available'
   end
 end
 
@@ -114,7 +114,7 @@ def list_options
   puts '7 - Exit'
 end
 
-def main # rubocop:disable Metrics/AbcSize
+def main 
   list_options
   option = gets.chomp
   case option.to_i
