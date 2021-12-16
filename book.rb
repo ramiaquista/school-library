@@ -9,6 +9,6 @@ class Book
   attr_accessor :title, :author
 
   def add_rental(rental)
-    @rental.push(rental)
+    @rentals.push(rental)
   end
 end
