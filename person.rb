@@ -1,7 +1,7 @@
 require './corrector'
 # Class Person file.
 class Person
-  def initialize(age, name = 'Unknown', parent_permission: true)
+  def initialize(age, parent_permission, name = 'Unknown')
     @name = name
     @age = age
     @parent_permission = parent_permission
@@ -10,7 +10,7 @@ class Person
   end
 
   attr_reader :id
-  attr_accessor :name, :age
+  attr_accessor :name, :age, :parent_permission
 
   def can_use_services?
     if of_age? || @parent_permission
