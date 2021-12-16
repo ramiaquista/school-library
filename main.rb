@@ -114,7 +114,7 @@ def list_options
   puts '7 - Exit'
 end
 
-def main 
+def main
   list_options
   option = gets.chomp
   case option.to_i
